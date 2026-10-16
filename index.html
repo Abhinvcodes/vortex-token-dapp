@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Vortex Token (VTX) DApp</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #f4f4f9;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        /* 2x2 Grid Layout */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            background: #6200ee;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: #3700b3;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+
+        /* Responsive stacking for mobile screens */
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Vortex Token (VTX) Dashboard</h2>
+
+    <div class="grid-container">
+        <div class="card">
+            <h3>Token Details</h3>
+            <p>Token Name: <span id="tokenName">Vortex Token</span></p>
+            <p>Token Symbol: <span id="tokenSymbol">VTX</span></p>
+            <p>Total Supply: <span id="totalSupply">0</span> VTX</p>
+        </div>
+
+        <div class="card">
+            <h3>Wallet Connection</h3>
+            <button id="connectWallet">Connect MetaMask</button>
+            <p id="walletAddress">Wallet: Not Connected</p>
+            <p id="tokenBalance">VTX Balance: 0</p>
+        </div>
+
+        <div class="card">
+            <h3>Transfer VTX</h3>
+            <input type="text" id="recipientAddress" placeholder="Recipient Address (0x...)">
+            <input type="number" id="transferAmount" placeholder="Amount of VTX">
+            <button id="sendTokens">Send Tokens</button>
+        </div>
+
+        <div class="card">
+            <h3>Mint Tokens (Owner Only)</h3>
+            <input type="text" id="mintRecipient" placeholder="Recipient Address (0x...)">
+            <input type="number" id="mintAmount" placeholder="Amount to Mint">
+            <button id="mintBtn">Mint VTX</button>
+        </div>
+    </div>
+
+    <!-- Load scripts in the correct order at the bottom so elements exist -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.7.0/ethers.umd.min.js"></script>
+    <script src="abi.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
