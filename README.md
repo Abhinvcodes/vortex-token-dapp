@@ -1,6 +1,6 @@
 # Vortex Token (VTX) DApp
 
-An original Decentralized Application (DApp) built on the Ethereum Sepolia Testnet that allows users to interact with a custom ERC-20 token interface. The project implements smart contract deployment, MetaMask integration, token transfers, and owner-restricted minting functionality.
+I built this Decentralized Application (DApp) on the Ethereum Sepolia Testnet to let users interact with a custom ERC-20 token interface. The project implements smart contract deployment, MetaMask integration, token transfers, and owner-restricted minting functionality.
 
 ---
 
@@ -12,7 +12,7 @@ Traditional digital asset and token management systems—such as platform credit
 3. **Vulnerability to Trust-Based Control:** Administrative functions lack automated, immutable enforcement, making them susceptible to human error or policy manipulation.
 
 ### Proposed Solution
-To resolve these issues, the **Vortex Token (VTX) DApp** implements a decentralized, trustless alternative on the Ethereum Sepolia Testnet. By combining a secure ERC-20 Solidity smart contract with an interactive web interface, this project delivers:
+To solve these issues, I designed the **Vortex Token (VTX) DApp** as a decentralized, trustless alternative on the Ethereum Sepolia Testnet. By combining a secure ERC-20 Solidity smart contract with an interactive web interface, my project delivers:
 * **True User Ownership & Control:** Token balances and ownership are cryptographically secured by user private keys via MetaMask.
 * **Transparent On-Chain Verification:** All data (such as total supply and wallet balances) is fetched and verified directly from the blockchain in real-time.
 * **Role-Based Access Control:** Critical functions like token minting are strictly restricted to the authorized contract owner via immutable code (`onlyOwner`), while peer-to-peer transfers enable secure, trustless value exchange without intermediaries.
@@ -23,7 +23,7 @@ To resolve these issues, the **Vortex Token (VTX) DApp** implements a decentrali
 * MetaMask Wallet Connection: Dynamic wallet connection with status feedback.
 * Blockchain Data Retrieval: Displays active token balance, total supply, token name, symbol, and contract owner address.
 * Token Transfer: Allows users to transfer VTX tokens to any valid Ethereum address.
-* Owner Minting: Enables the contract owner to mint additional tokens while restricting unauthorized accounts.
+* Owner Minting: Enables me (as the contract owner) to mint additional tokens while restricting unauthorized accounts.
 
 ---
 
@@ -43,30 +43,30 @@ To resolve these issues, the **Vortex Token (VTX) DApp** implements a decentrali
 
 ---
 
-### Steps Required to Execute the Application Locally
+### How to Execute the Application Locally
 
 1. **Prerequisites:**
    * Install the [MetaMask browser extension](https://metamask.io/).
-   * Switch your MetaMask active network to the **Sepolia Testnet** and ensure you have Sepolia ETH for gas fees.
+   * Switch your MetaMask active network to the **Sepolia Testnet** and make sure you have Sepolia ETH for gas fees.
 
 2. **Clone or Download the Repository:**
-   * Download or clone your GitHub repository containing `index.html`, `app.js`, `abi.js`, and your smart contract source files.
+   * Download or clone my GitHub repository containing `index.html`, `app.js`, `abi.js`, and the smart contract source files.
 
 3. **Configure the Contract Address:**
-   * Open `app.js` in your code editor.
-   * If you are deploying your own smart contract instance, update the contract address variable with your newly deployed Sepolia contract address. *(If using the pre-deployed project address, you can leave it as configured).*
+   * Open `app.js` in the code editor.
+   * If deploying a custom smart contract instance, update the contract address variable with the newly deployed Sepolia contract address. *(If using my pre-deployed project address, leave it as configured)*.
 
 4. **Launch the DApp:**
    * Open the `index.html` file locally in any modern web browser (or run it using a local development server like VS Code's *Live Server* extension).
 
 ---
 
-### Steps to Connect MetaMask and Interact with the Smart Contract
+### How to Connect MetaMask and Interact with the Smart Contract
 
 1. **Connect Wallet:**
    * Click the **Connect MetaMask** button on the DApp dashboard.
-   * A MetaMask popup will appear asking for permission to connect your account. Approve the connection request.
-   * Once connected, your active wallet address and live VTX token balance will display dynamically on the user interface.
+   * Approve the MetaMask popup asking for permission to connect.
+   * Once connected, the active wallet address is displayed dynamically on the user interface.
 
 2. **Transfer Tokens:**
    * Enter a valid recipient Ethereum address (`0x...`) in the *Recipient Address* field.
@@ -74,9 +74,9 @@ To resolve these issues, the **Vortex Token (VTX) DApp** implements a decentrali
    * Click **Send Tokens**, review the gas fee in the MetaMask prompt, and confirm the transaction.
 
 3. **Mint Tokens (Owner Only):**
-   * Input the recipient's address and the amount of tokens you wish to create in the *Mint Tokens* section.
+   * Input the recipient's address and the amount of tokens to create in the *Mint Tokens* section.
    * Click **Mint VTX**. 
-   * If executed by the contract owner, MetaMask will prompt you to confirm the transaction, after which the total supply and balances update. If executed by any other account, the transaction will safely revert due to smart contract access validation.
+   * When executed from the contract owner account, MetaMask prompts to confirm the transaction, after which the total supply and balances update. If executed by any other account, the transaction safely reverts due to smart contract access validation.
 
 ## Test Cases & Results
 
@@ -88,7 +88,7 @@ To resolve these issues, the **Vortex Token (VTX) DApp** implements a decentrali
 
 * Invalid Transfer (Insufficient Balance):
   * Inputs Tested: Amount greater than user's VTX balance
-  * Expected Result: Transaction fails or gets rejected with an insufficient balance error(console output).
+  * Expected Result: Transaction fails or gets rejected with an insufficient balance error (console output).
   * Observed Result: MetaMask / Smart Contract reverts transaction with 'Insufficient balance!'.
   * Status: PASS
 
@@ -125,7 +125,7 @@ To resolve these issues, the **Vortex Token (VTX) DApp** implements a decentrali
 
 ### 6. Valid Minting
 ![Minting](screenshots/minting_VTX/minting_tokens_from_owner_account.png)
-*Minting from contract deployer's account is valid*
+*Minting from my contract deployer's account is valid*
 
 ### 7. Failed Mint
 ![Failed Mint](screenshots/minting_VTX/minting_tokens_from_non_owner_account.png)
@@ -133,6 +133,6 @@ To resolve these issues, the **Vortex Token (VTX) DApp** implements a decentrali
 
 ### 8. BlockChain Data
 ![blockchain data](screenshots/displaying_blockchain_data.png)
-*Total supply shows zero since the frontend does not have a valid wallet address to query the smart contract.*
+*Total supply shows zero since the frontend does not have a valid wallet address to query the smart contract yet.*
 
 ---
